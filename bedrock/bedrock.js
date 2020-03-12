@@ -100,7 +100,7 @@ L.simpleGraticule({
 	zoomIntervals: [
 		{ start: -3, end: -2, interval: 16 * 16 * 2 },
 		{ start: -1, end: 0, interval: 16 * 16 },
-		{ start: 0, end: 1, interval: 16 * 8 },
+		{ start: 1, end: 1, interval: 16 * 8 },
 		{ start: 2, end: 2, interval: 16 * 2 },
 		{ start: 3, end: 3, interval: 16 },
 	],

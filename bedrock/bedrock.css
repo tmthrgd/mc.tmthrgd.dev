@@ -1,9 +1,5 @@
-html, body {
+html, body, #map {
 	height: 100vh;
-}
-
-#map {
-	height: 100%;
 }
 
 .leaflet-container .leaflet-control-mouseposition {
@@ -11,14 +7,10 @@ html, body {
 }
 
 .leaflet-tile {
-	max-width: none !important;
-	/* Preserve crisp pixels with scaled up images */
-	image-rendering: optimizeSpeed;             /* Legal fallback */
-	image-rendering: -moz-crisp-edges;          /* Firefox        */
-	image-rendering: -o-crisp-edges;            /* Opera          */
-	image-rendering: -webkit-optimize-contrast; /* Safari         */
-	image-rendering: optimize-contrast;         /* CSS3 Proposed  */
-	image-rendering: crisp-edges;               /* CSS4 Proposed  */
-	image-rendering: pixelated;                 /* CSS4 Proposed  */
-	-ms-interpolation-mode: nearest-neighbor;   /* IE8+           */
+	/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-pixelated;
+	image-rendering: pixelated;
 }
