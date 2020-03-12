@@ -1,0 +1,24 @@
+html, body {
+	height: 100vh;
+}
+
+#map {
+	height: 100%;
+}
+
+.leaflet-container .leaflet-control-mouseposition {
+	font-size: 15px;
+}
+
+.leaflet-tile {
+	max-width: none !important;
+	/* Preserve crisp pixels with scaled up images */
+	image-rendering: optimizeSpeed;             /* Legal fallback */
+	image-rendering: -moz-crisp-edges;          /* Firefox        */
+	image-rendering: -o-crisp-edges;            /* Opera          */
+	image-rendering: -webkit-optimize-contrast; /* Safari         */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed  */
+	image-rendering: crisp-edges;               /* CSS4 Proposed  */
+	image-rendering: pixelated;                 /* CSS4 Proposed  */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+           */
+}
