@@ -145,7 +145,11 @@ const GoToAction = L.Toolbar2.Action.extend({
 				return;
 		}
 
-		map.panTo(coords);
+		if (map.getZoom() < 0) {
+			map.setView(coords, 0);
+		} else {
+			map.panTo(coords);
+		}
 
 		if (!map.hasLayer(gotoRect)) {
 			gotoRect.addTo(map);
