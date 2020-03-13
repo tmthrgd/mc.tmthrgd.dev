@@ -1,0 +1,5 @@
+Contact: mailto:me@tomthorogood.uk
+
+Encryption: https://tomthorogood.uk/FF594180.pub.asc
+Encryption: https://keybase.io/tmthrgd
+Encryption: openpgp4fpr:8A8EF43C4DBF7320FA827AEADBAB7016FF594180

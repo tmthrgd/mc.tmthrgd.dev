@@ -6,6 +6,17 @@
 			"source": "/",
 			"destination": "/bedrock/",
 			"statusCode": 307
+		},
+		{
+			"source": "/security.txt",
+			"destination": "/.well-known/security.txt",
+			"statusCode": 308
+		}
+	],
+	"rewrites": [
+		{
+			"source": "/.well-known/security.txt",
+			"destination": "/security.txt"
 		}
 	],
 	"headers": [
@@ -43,6 +54,15 @@
 				{
 					"key": "NEL",
 					"value": "{\"report_to\":\"default\",\"max_age\":31536000,\"include_subdomains\":true}"
+				}
+			]
+		},
+		{
+			"source": "/\\.well-known/security\\.txt",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=86400"
 				}
 			]
 		},
