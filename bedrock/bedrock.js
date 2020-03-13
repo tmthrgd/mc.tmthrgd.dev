@@ -149,17 +149,17 @@ const GoToAction = L.Toolbar2.Action.extend({
 				return;
 		}
 
+		const center = coords.map(c => c + 8);
+		const corner = coords.map(c => c + 16);
+
 		if (map.getZoom() < -1) {
-			map.setView(coords, 0);
+			map.setView(center, 0);
 		} else {
-			map.panTo(coords);
+			map.panTo(center);
 		}
 
 		gotoRect.addTo(map);
-		gotoRect.setBounds([
-			coords,
-			[coords[0] + 16, coords[1] + 16],
-		]);
+		gotoRect.setBounds([coords, corner]);
 	},
 });
 
