@@ -149,7 +149,7 @@ const GoToAction = L.Toolbar2.Action.extend({
 				return;
 		}
 
-		if (map.getZoom() < 0) {
+		if (map.getZoom() < -1) {
 			map.setView(coords, 0);
 		} else {
 			map.panTo(coords);
