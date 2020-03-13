@@ -124,6 +124,10 @@ const GoToAction = L.Toolbar2.Action.extend({
 		const coords = (prompt('Go to coordinates:') || '')
 			.split(/[\/ ,]+/g)
 			.map(c => parseInt(c.trim(), 10) * 16);
+		if (coords.some(c => isNaN(c))) {
+			return;
+		}
+
 		switch (coords.length) {
 			case 2:
 				map.panTo([coords[1], coords[0]]);
@@ -137,3 +141,5 @@ new L.Toolbar2.Control({
 	position: 'topleft',
 	actions: [GoToAction],
 }).addTo(map);
+
+map.restoreView();
