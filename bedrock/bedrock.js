@@ -111,6 +111,11 @@ L.simpleGraticule({
 
 new MousePosition().addTo(map);
 
+const gotoRect = L.rectangle([[0, 0], [16, 16]], {
+	color: '#000',
+	fillOpacity: 0.1,
+});
+
 const GoToAction = L.Toolbar2.Action.extend({
 	options: {
 		toolbarIcon: {
@@ -121,7 +126,8 @@ const GoToAction = L.Toolbar2.Action.extend({
 
 	addHooks() {
 		// TODO(tmthrgd): Use something better than prompt.
-		const coords = (prompt('Go to coordinates:') || '')
+		let coords = (prompt('Go to coordinates:') || '')
+			.trim()
 			.split(/[\/ ,]+/g)
 			.map(c => parseInt(c.trim(), 10) * 16);
 		if (coords.some(c => isNaN(c))) {
@@ -130,10 +136,24 @@ const GoToAction = L.Toolbar2.Action.extend({
 
 		switch (coords.length) {
 			case 2:
-				map.panTo([coords[1], coords[0]]);
+				coords = [coords[1], coords[0]];
+				break;
 			case 3:
-				map.panTo([coords[2], coords[0]]);
+				coords = [coords[2], coords[0]];
+				break;
+			default:
+				return;
 		}
+
+		map.panTo(coords);
+
+		if (!map.hasLayer(gotoRect)) {
+			gotoRect.addTo(map);
+		}
+		gotoRect.setBounds([
+			coords,
+			[coords[0] + 16, coords[1] + 16],
+		]);
 	},
 });
 
