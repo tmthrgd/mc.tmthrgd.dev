@@ -151,9 +151,7 @@ const GoToAction = L.Toolbar2.Action.extend({
 			map.panTo(coords);
 		}
 
-		if (!map.hasLayer(gotoRect)) {
-			gotoRect.addTo(map);
-		}
+		gotoRect.addTo(map);
 		gotoRect.setBounds([
 			coords,
 			[coords[0] + 16, coords[1] + 16],
