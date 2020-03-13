@@ -12,12 +12,12 @@ class Random {
 		const mask = (1n << 48n) - 1n;
 
 		this.v = (this.v * multiplier + addend) & mask;
-		return Number(BigInt.asIntN(32, this.v >> (48n - BigInt(bits))));
+		return Number(BigInt.asIntN(32, this.v >> BigInt(48 - bits)));
 	}
 
 	nextInt(bound) {
 		if ((bound & -bound) == bound) {
-			return Number(BigInt.asIntN(32, (BigInt(bound) * (BigInt)(this.next(31))) >> 31n));
+			return Number(BigInt.asIntN(32, (BigInt(bound) * BigInt(this.next(31))) >> 31n));
 		}
 
 		for (; ;) {
@@ -31,6 +31,8 @@ class Random {
 	}
 
 	nextDouble() {
+		// We don't actually need the results of nextDouble so we're
+		// skipping the implementation as JavaScript's Numbers are a mess.
 		this.next(26);
 		this.next(27);
 
