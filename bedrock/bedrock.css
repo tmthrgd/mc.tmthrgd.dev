@@ -14,3 +14,7 @@ html, body, #map {
 	image-rendering: -o-pixelated;
 	image-rendering: pixelated;
 }
+
+a.leaflet-toolbar-icon {
+	color: #000;
+}

@@ -110,3 +110,30 @@ L.simpleGraticule({
 }).addTo(map);
 
 new MousePosition().addTo(map);
+
+const GoToAction = L.Toolbar2.Action.extend({
+	options: {
+		toolbarIcon: {
+			html: '⮞',
+			tooltip: 'Go to coordinates',
+		},
+	},
+
+	addHooks() {
+		// TODO(tmthrgd): Use something better than prompt.
+		const coords = (prompt('Go to coordinates:') || '')
+			.split(/[\/ ,]+/g)
+			.map(c => parseInt(c.trim(), 10) * 16);
+		switch (coords.length) {
+			case 2:
+				map.panTo([coords[1], coords[0]]);
+			case 3:
+				map.panTo([coords[2], coords[0]]);
+		}
+	},
+});
+
+new L.Toolbar2.Control({
+	position: 'topleft',
+	actions: [GoToAction],
+}).addTo(map);
