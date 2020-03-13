@@ -1,3 +1,7 @@
+if (!window.BigInt) {
+	document.querySelector('.browser-warning').classList.add('show');
+}
+
 let processChunk = (tile, chunkX, chunkZ, done) => setTimeout(() => {
 	renderChunk(tile, chunkX, chunkZ);
 	done(null, tile);

@@ -1,5 +1,37 @@
-html, body, #map {
+html, body {
 	height: 100vh;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.browser-warning {
+	display: none;
+
+	padding: 1rem;
+
+	background: repeating-linear-gradient(-55deg, #f00, #f00 10px, #ffa500 10px, #ffa500 20px);
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+
+	text-align: center;
+
+	text-shadow: 1px 0 2px #fff, -1px 0 2px #fff, 0 1px 2px #fff, 0 -1px 2px #fff;
+}
+
+.browser-warning.show {
+	display: block;
+}
+
+.browser-warning a {
+	color: #333;
+}
+
+#map {
+	flex: 1 0;
 }
 
 .leaflet-container .leaflet-control-mouseposition {
