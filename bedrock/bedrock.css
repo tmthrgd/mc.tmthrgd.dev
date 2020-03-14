@@ -34,6 +34,10 @@ body {
 	flex: 1 0;
 }
 
+.leaflet-container {
+	background: #eee;
+}
+
 .leaflet-container .leaflet-control-mouseposition {
 	font-size: 15px;
 }
