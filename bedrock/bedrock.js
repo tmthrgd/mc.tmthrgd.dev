@@ -91,6 +91,7 @@ const map = L.map('map', {
 	maxZoom: 3,
 	zoom: 0,
 });
+map.attributionControl.addAttribution('Created by <a href=https://tomthorogood.uk>Tom Thorogood</a> for <a href=https://www.minecraft.net>Minecraft</a> 1.15.2');
 
 new BedrockLayer({
 	tileSize: 16 * 16,
