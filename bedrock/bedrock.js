@@ -65,7 +65,7 @@ const MousePosition = L.Control.extend({
 	},
 
 	onRemove(map) {
-		map.off('mousemove', this._onMouseMove)
+		map.off('mousemove', this._onMouseMove);
 	},
 
 	_onMouseMove({ latlng: { lng, lat } }) {
