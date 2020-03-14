@@ -7,7 +7,8 @@ let processChunk = (tile, chunkX, chunkZ, done) => setTimeout(() => {
 	done(null, tile);
 }, 0);
 
-if (window.OffscreenCanvas && window.Worker) {
+const usingWorkers = window.OffscreenCanvas && window.Worker;
+if (usingWorkers) {
 	const callbacks = {};
 	let id = 0;
 
@@ -87,7 +88,7 @@ const crs = L.Util.extend({}, L.CRS.Simple, {
 const map = L.map('map', {
 	crs,
 	center: [0, 0],
-	minZoom: -3,
+	minZoom: usingWorkers ? -3 : -2,
 	maxZoom: 3,
 	zoom: 0,
 });
