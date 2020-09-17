@@ -1,0 +1,56 @@
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+
+	background: center center / cover fixed no-repeat url('/img/404.png') #84a5f9;
+
+	color: white;
+
+	display: grid;
+	align-items: center;
+	justify-content: center;
+
+	font-family: Trebuchet, Tahoma, Arial, sans-serif;
+
+	text-align: center;
+}
+
+main {
+	z-index: 10;
+}
+
+main > :first-child {
+	margin-top: 0;
+}
+
+main > :last-child {
+	margin-bottom: 0;
+}
+
+h1 {
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	padding: 1rem;
+}
+
+footer p {
+	margin: 0;
+}
