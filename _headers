@@ -1,0 +1,15 @@
+/*
+	Cache-Control: public, max-age=900
+	Content-Security-Policy: default-src 'none'; style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com; img-src 'self' https://cdnjs.cloudflare.com data:; form-action 'none'; frame-ancestors 'none'; base-uri 'none'; block-all-mixed-content; report-uri https://tomthorogood.report-uri.com/r/d/csp/enforce
+	X-Frame-Options: DENY
+	X-XSS-Protection: 1; mode=block
+	X-Content-Type-Options: nosniff
+	Referrer-Policy: strict-origin-when-cross-origin
+	Report-To: {"group":"default","max_age":31536000,"endpoints":[{"url":"https://tomthorogood.report-uri.com/a/d/g"}],"include_subdomains":true}
+	NEL: {"report_to":"default","max_age":31536000,"include_subdomains":true}
+
+/favicon.ico
+	Cache-Control: public, max-age=604800
+
+/robots.txt
+	Cache-Control: public, max-age=604800

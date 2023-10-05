@@ -1,0 +1,3 @@
+/ /bedrock/ 307
+/security.txt /.well-known/security.txt 301
+/.well-known/security.txt https://tomthorogood.net/.well-known/security.txt 302
